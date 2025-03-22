@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Reviews</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/e3f4715c40.js" crossorigin="anonymous"></script>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+    <!-- Navbar -->
+  <nav class="bg-red-500">
+    <div class="container mx-auto px-4 flex items-center justify-between h-16">
+        <!-- Brand Title -->
+        <h1 class="text-4xl font-bold text-white">ShadowCircuit</h1>
+        
+        <!-- Desktop Navbar -->
+        <ul class="hidden md:flex space-x-4">
+            <li><a href="index.html" class="text-white hover:text-yellow-300 transition duration-300 ease-in-out">Home</a></li>
+            <li><a href="games.html" class="text-white hover:text-yellow-300 transition duration-300 ease-in-out">Games</a></li>
+            <li><a href="about.html" class="text-white hover:text-yellow-300 transition duration-300 ease-in-out">About</a></li>
+            <li><a href="contact.html" class="text-white hover:text-yellow-300 transition duration-300 ease-in-out">Contact</a></li>
+        </ul>
+        
+        <!-- Mobile Menu Button -->
+        <button id="menu-button" class="md:hidden block focus:outline-none">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+        </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden bg-red-500 text-white text-center md:hidden absolute w-full">
+        <a href="index.html" class="block py-2 hover:bg-red-400 transition duration-300 ease-in-out">Home</a>
+        <a href="games.html" class="block py-2 hover:bg-red-400 transition duration-300 ease-in-out">Games</a></li>
+        <a href="about.html" class="block py-2 hover:bg-red-400 transition duration-300 ease-in-out">About</a>
+        <a href="contact.html" class="block py-2 hover:bg-red-400 transition duration-300 ease-in-out">Contact</a>
+    </div>
+  </nav>
+
+  <script>
+    const menuButton = document.getElementById('menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        document.body.classList.toggle('overflow-hidden'); // Prevent scrolling when menu is open
+    });
+  </script>
+
+    <!-- Hero Section -->
+    <section class="bg-cover bg-center h-96" style="background-image: url('assets/carl-raw-m3hn2Kn5Bns-unsplash.jpg');">
+        <div class="bg-black bg-opacity-50 h-full flex items-center justify-center">
+            <div class="text-center">
+                <h2 class="text-4xl font-bold mb-4">Latest Game Reviews</h2>
+                <p class="text-lg">Your ultimate source for honest and detailed gaming reviews.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+<section class="py-12">
+    <div class="container mx-auto">
+        <h2 class="text-3xl font-bold mb-8 text-center">Top Reviews</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Review Card -->
+            <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-2xl">
+                <img src="assets\1381751.jpg" alt="Game Image" class="w-full">
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold mb-2"> Metaphor: ReFantazio</h3>
+                    <p class="text-white mb-4">
+                       This is easily one of the best games of 2024, having reached critical acclaim already, scoring an impressive 94 on Metacritic from 35 different reviewers. It's a sprawling epic JRPG filled with a huge cast of memorable characters and stylish turn-based combat that comes from one of the greatest JRPG publishers around, Atlus. It is responsible for the Persona and Shin Megami Tensei series, both of which are incredibly popular.
+                    </p>
+                    <a href="#" class="text-yellow-400 hover:underline">Read More</a>
+                </div>
+            </div>
+            <!-- Repeat Review Cards -->
+            <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-2xl">
+                <img src="assets\1365617.jpeg" alt="Game Image" class="w-full">
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold mb-2">Call of Duty:Black ops 6</h3>
+                    <p class="text-white mb-4">
+                        Call of Duty publisher Activision has unveiled Recon Squad, an invite-only program aimed at gathering community feedback throughout Black Ops 6 and Warzone's seasons in order to improve both titles. Although the most recent entry in the Call of Dutyfranchise, Black Ops 6, received rave reviews from critics and players at launch, the shooter appears to have been on a sharp decline along with Warzone due to a large number of issues related to bugs, performance issues, and cheaters.
+                    </p>
+                    <a href="#" class="text-yellow-400 hover:underline">Read More</a>
+                </div>
+            </div>
+            <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-2xl">
+                <img src="assets\1325553.jpg" alt="Game Image" class="w-full">
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold mb-2">Baldur's Gate 3</h3>
+                    <p class="text-white mb-4">
+                        Baldur's Gate 3 is the new gold standard for tabletop-inspired RPGs. The game's extensive flexibility and limitless player choices make it the most accurate adaptation of a Dungeons & Dragons campaign in video game history.Its branching story and gorgeous presentation bring the beloved setting to life.
+                    </p>
+                    <a href="#" class="text-yellow-400 hover:underline">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- Footer -->
+        <footer class="bg-red-600 text-black py-8 font-sans">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-gray-800 border border-gray-700 rounded-lg p-6 shadow-lg transform transition-transform hover:scale-105 hover:shadow-2xl">
+                        <h3 class="text-xl font-bold border-b-2 border-white pb-2 text-center text-white">About Us</h3>
+                        <p class="mt-4 text-gray-300 text-center">
+                            Welcome to GameZone, your ultimate destination for gaming news, reviews, and updates. Join our community and level up your gaming experience!
+                        </p>
+                    </div>
+                    <div class="flex flex-col items-center justify-center border border-white p-4 rounded-md bg-gray-800 shadow-lg transform transition-transform hover:scale-105 hover:shadow-2xl">
+                        <h3 class="text-xl font-bold border-b-2 border-white pb-2 text-center text-white">Quick Links</h3>
+                        <ul class="mt-2 space-y-2 text-center">
+                            <li><a href="index.html" class="hover:text-yellow-500 text-white">Home</a></li>
+                            <li><a href="games.html" class="hover:text-yellow-500 text-white">Games</a></li>
+                            <li><a href="reviews.html" class="hover:text-yellow-500 text-white">Reviews</a></li>
+                            <li><a href="contact.html" class="hover:text-yellow-500 text-white">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-800 border border-gray-700 rounded-lg p-6 shadow-lg transform transition-transform hover:scale-105 hover:shadow-2xl">
+                        <h3 class="text-xl font-bold border-b-2 border-white pb-2 text-center text-white">Follow Us</h3>
+                        <div class="flex justify-center space-x-4 mt-4">
+                            <a href="https://facebook.com" target="_blank" class="text-4xl text-white hover:text-yellow-500 transition-transform hover:scale-125">
+                                <i class="fa-brands fa-square-facebook"></i>
+                            </a>
+                            <a href="https://twitter.com" target="_blank" class="text-4xl text-white hover:text-yellow-500 transition duration-300 ease-in-out">
+                                        <i class="fa-brands fa-square-x-twitter"></i>
+                                    </a>
+                                    <a href="https://instagram.com" target="_blank" class="text-4xl text-white hover:text-yellow-500 transition duration-300 ease-in-out">
+                                        <i class="fa-brands fa-square-instagram"></i>
+                                    </a>
+                                    <a href="https://reddit.com" target="_blank" class="text-4xl text-white hover:text-yellow-500 transition duration-300 ease-in-out">
+                                        <i class="fa-brands fa-square-reddit"></i>
+                                    </a>
+                                    <a href="https://discord.com" target="_blank" class="text-4xl text-white hover:text-yellow-500 transition duration-300 ease-in-out">
+                                        <i class="fa-brands fa-discord"></i>
+                                    </a>
+                                    <a href="https://youtube.com" target="_blank" class="text-4xl text-white hover:text-yellow-500 transition duration-300 ease-in-out">
+                                        <i class="fa-brands fa-square-youtube"></i>
+                                    </a>
+                                </div>
+                            </div>            
+                        </div>
+                        <!-- Footer Bottom -->
+                        <div class="w-full text-center border-t border-white mt-8 pt-4 bg-red-700">
+                            <p class="text-white">&copy; 2025 ShadowCircuit. All rights reserved.</p>
+                        </div>
+                    </div>
+                </footer> 
+
+</body>
+</html>

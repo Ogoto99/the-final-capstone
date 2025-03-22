@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/e3f4715c40.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="bg-gray-900 text-white">
+    <!-- Navbar -->
+  <nav class="bg-red-500">
+    <div class="container mx-auto px-4 flex items-center justify-between h-16">
+        <!-- Brand Title -->
+        <h1 class="text-4xl font-bold text-white">ShadowCircuit</h1>
+        
+        <!-- Desktop Navbar -->
+        <ul class="hidden md:flex space-x-4">
+            <li><a href="index.html" class="text-white hover:text-yellow-300 transition duration-300 ease-in-out">Home</a></li>
+            <li><a href="games.html" class="text-white hover:text-yellow-300 transition duration-300 ease-in-out">Games</a></li>
+            <li><a href="about.html" class="text-white hover:text-yellow-300 transition duration-300 ease-in-out">About</a></li>
+            <li><a href="contact.html" class="text-white hover:text-yellow-300 transition duration-300 ease-in-out">Contact</a></li>
+        </ul>
+        
+        <!-- Mobile Menu Button -->
+        <button id="menu-button" class="md:hidden block focus:outline-none">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+        </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden bg-red-500 text-white text-center md:hidden absolute w-full">
+        <a href="index.html" class="block py-2 hover:bg-red-400 transition duration-300 ease-in-out">Home</a>
+        <a href="games.html" class="block py-2 hover:bg-red-400 transition duration-300 ease-in-out">Games</a></li>
+        <a href="about.html" class="block py-2 hover:bg-red-400 transition duration-300 ease-in-out">About</a>
+        <a href="contact.html" class="block py-2 hover:bg-red-400 transition duration-300 ease-in-out">Contact</a>
+    </div>
+  </nav>
+
+  <script>
+    const menuButton = document.getElementById('menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        document.body.classList.toggle('overflow-hidden'); // Prevent scrolling when menu is open
+    });
+  </script>
+
+    <!-- Hero Section -->
+    <section class="bg-cover bg-center h-screen" style="background-image: url('assets/carl-raw-m3hn2Kn5Bns-unsplash.jpg');">
+        <div class="bg-black bg-opacity-50 h-full flex flex-col justify-center items-center text-center">
+            <h2 class="text-5xl font-extrabold mb-4">Welcome to the Ultimate Gaming Experience</h2>
+            <p class="text-lg mb-6">Discover the latest games, reviews, and updates in the gaming world.</p>
+            <a href="#games" class="bg-yellow-500 text-black px-6 py-3 rounded-lg hover:bg-yellow-600">Explore Games</a>
+        </div>
+    </section>
+
+    <!-- Featured Games -->
+    <section id="games" class="py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12">Featured Games</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Game Card -->
+                <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+                    <img src="assets\ad63ba49-52c1-42cc-ac9f-d7ddce73905a.jpg" alt="Game 1" class="w-full">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">NFS Heat</h3>
+                        <p class="text-white mb-4">
+                            Hustle by day and risk it all at night in Need for Speed™ Heat, a thrilling race experience that pits you against a city's rogue police force as you battle your way into street racing's elite.
+                        </p>
+                        <a href="#" class="text-yellow-400 hover:underline">Learn More</a>
+                    </div>
+                </div>
+                <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+                    <img src="assets\Call of Duty_ Modern Warfare II - Xbox One_ Xbox Series X.jpg" alt="Game 2" class="w-full">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Call of Duty Modern Warfare II</h3>
+                        <p class="text-white mb-4">
+                            Call of Duty: Modern Warfare II drops players into an unprecedented global conflict that features the return of the iconic operators of Task Force 141. Infinity Ward brings fans state-of-the-art gameplay, with all-new gun handling, an advanced AI system, a new Gunsmith and a suite of other gameplay and graphical innovations that elevate the franchise to new heights.
+                        </p>
+                        <a href="#" class="text-yellow-400 hover:underline">Learn More</a>
+                    </div>
+                </div>
+                <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+                    <img src="assets\Far cry 3 Ps4 And love - How they Are the Same _.jpg" alt="Game 3" class="w-full">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Far cry 3</h3>
+                        <p class="text-white mb-4">
+                            Far Cry® 3 Classic Edition brings the Rook Islands to current-gen consoles for the first time. Discover the island's bloody secrets and take the fight to the enemy; improvise and use your environment to your advantage; and outwit its roster of ruthless, deranged inhabitants to save your friends.
+                        </p>
+                        <a href="#" class="text-yellow-400 hover:underline">Learn More</a>
+                    </div>
+                </div>
+                <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+                    <img src="assets\Grand Theft Auto V GTA Premium Edition Rockstar Games PS4 Físico.jpg" alt="Game 3" class="w-full">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Grand Theft Auto V</h3>
+                        <p class="text-white mb-4">
+                            Grand Theft Auto V is an action-adventure game played from either a third-person or first-person perspective. Players complete missions—linear scenarios with set objectives—to progress through the story. Outside of the missions, players may freely roam the open world.
+                        </p>
+                        <a href="#" class="text-yellow-400 hover:underline">Learn More</a>
+                    </div>
+                </div>
+                <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+                    <img src="assets\ps5-games-ghost-of-tsushima-image-block-02-en-14oct21.webp" alt="Game 3" class="w-full">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Ghost of Tsushima</h3>
+                        <p class="text-white mb-4">
+                            Ghost of Tsushima is a 2020 action-adventure game developed by Sucker Punch Productions and published by Sony Interactive Entertainment. The player controls Jin Sakai, a samurai on a quest to protect Tsushima Island during the first Mongol invasion of Japan.
+                        </p>
+                        <a href="#" class="text-yellow-400 hover:underline">Learn More</a>
+                    </div>
+                </div>
+                <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+                    <img src="assets\ps5-games-gt7-hub-image-block-01-en-10mar22.webp" alt="Game 3" class="w-full">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Gran Turismo 7</h3>
+                        <p class="text-white mb-4">
+                            Gran Turismo 7 brings together the very best features of the Real Driving Simulator. Whether you're a competitive or casual racer, collector, tuner, livery designer or photographer – find your line with a staggering collection of game modes including fan-favorites like GT Campaign, Arcade and Driving School.
+                        </p>
+                        <a href="#" class="text-yellow-400 hover:underline">Learn More</a>
+                    </div>
+                </div>
+                <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+                    <img src="assets\ps5-games-horizon-forbidden-west-image-block-01-en-28jul21.webp" alt="Game 3" class="w-full">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Horizon Forbidden-West</h3>
+                        <p class="text-white mb-4">
+                            Horizon Forbidden West, Aloy ventures into the dangerous, uncharted Forbidden West to uncover the secrets behind Earth's imminent collapse and restore balance to a world ravaged by a mysterious blight and catastrophic storms.
+                        </p>
+                        <a href="#" class="text-yellow-400 hover:underline">Learn More</a>
+                    </div>
+                </div>
+                <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+                    <img src="assets\1308c597-0114-4335-9515-a9bca1856cb8.jpg" alt="Game 3" class="w-full">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Fifa 23</h3>
+                        <p class="text-white mb-4">
+                            FIFA 23 Legacy Edition features the latest kits, clubs, and squads from some of the top football leagues of the world. It will also feature the addition of top women's club teams and some of the world's most famous stadiums, including brand new ones, an updated visual identity and a refreshed broadcast overlay package.
+                        </p>
+                        <a href="#" class="text-yellow-400 hover:underline">Learn More</a>
+                    </div>
+                </div>
+                <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+                    <img src="assets\wp6068822-tom-clancys-ghost-recon-breakpoint-hd-wallpapers.jpg" alt="Game 3" class="w-full">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Tom Clancy's Breakpoint</h3>
+                        <p class="text-white mb-4">
+                            Breakpoint is set in an open world named Auroa which can be freely explored by players. Like its predecessor Wildlands, Breakpoint is a tactical shooter game set in an open world environment. It is played from a third-person perspective and uses an optional first-person view for aiming weapons. 
+                        </p>
+                        <a href="#" class="text-yellow-400 hover:underline">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+       <!-- Footer -->
+       <footer class="bg-red-600 text-black py-8 font-sans">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-800 border border-gray-700 rounded-lg p-6 shadow-lg transform transition-transform hover:scale-105 hover:shadow-2xl">
+                    <h3 class="text-xl font-bold border-b-2 border-white pb-2 text-center text-white">About Us</h3>
+                    <p class="mt-4 text-gray-300 text-center">
+                        Welcome to GameZone, your ultimate destination for gaming news, reviews, and updates. Join our community and level up your gaming experience!
+                    </p>
+                </div>
+                <div class="flex flex-col items-center justify-center border border-white p-4 rounded-md bg-gray-800 shadow-lg transform transition-transform hover:scale-105 hover:shadow-2xl">
+                    <h3 class="text-xl font-bold border-b-2 border-white pb-2 text-center text-white">Quick Links</h3>
+                    <ul class="mt-2 space-y-2 text-center">
+                        <li><a href="index.html" class="hover:text-yellow-500 text-white">Home</a></li>
+                        <li><a href="games.html" class="hover:text-yellow-500 text-white">Games</a></li>
+                        <li><a href="reviews.html" class="hover:text-yellow-500 text-white">Reviews</a></li>
+                        <li><a href="contact.html" class="hover:text-yellow-500 text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="bg-gray-800 border border-gray-700 rounded-lg p-6 shadow-lg transform transition-transform hover:scale-105 hover:shadow-2xl">
+                    <h3 class="text-xl font-bold border-b-2 border-white pb-2 text-center text-white">Follow Us</h3>
+                    <div class="flex justify-center space-x-4 mt-4">
+                        <a href="https://facebook.com" target="_blank" class="text-4xl text-white hover:text-yellow-500 transition-transform hover:scale-125">
+                            <i class="fa-brands fa-square-facebook"></i>
+                        </a>
+                        <a href="https://twitter.com" target="_blank" class="text-4xl text-white hover:text-yellow-500 transition duration-300 ease-in-out">
+                                    <i class="fa-brands fa-square-x-twitter"></i>
+                                </a>
+                                <a href="https://instagram.com" target="_blank" class="text-4xl text-white hover:text-yellow-500 transition duration-300 ease-in-out">
+                                    <i class="fa-brands fa-square-instagram"></i>
+                                </a>
+                                <a href="https://reddit.com" target="_blank" class="text-4xl text-white hover:text-yellow-500 transition duration-300 ease-in-out">
+                                    <i class="fa-brands fa-square-reddit"></i>
+                                </a>
+                                <a href="https://discord.com" target="_blank" class="text-4xl text-white hover:text-yellow-500 transition duration-300 ease-in-out">
+                                    <i class="fa-brands fa-discord"></i>
+                                </a>
+                                <a href="https://youtube.com" target="_blank" class="text-4xl text-white hover:text-yellow-500 transition duration-300 ease-in-out">
+                                    <i class="fa-brands fa-square-youtube"></i>
+                                </a>
+                            </div>
+                        </div>            
+                    </div>
+                    <!-- Footer Bottom -->
+                    <div class="w-full text-center border-t border-white mt-8 pt-4 bg-red-700">
+                        <p class="text-white">&copy; 2025 ShadowCircuit. All rights reserved.</p>
+                    </div>
+                </div>
+            </footer> 
+
+</body>
+</html>
