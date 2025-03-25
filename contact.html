@@ -8,12 +8,12 @@
     <script src="https://kit.fontawesome.com/e3f4715c40.js" crossorigin="anonymous"></script>
 </head>
 <body class="bg-gray-900 text-white">
-    <!-- Navbar -->
-  <nav class="bg-red-500">
+<!-- Navbar -->
+<nav class="bg-red-500 fixed top-0 left-0 w-full z-10">
     <div class="container mx-auto px-4 flex items-center justify-between h-16">
         <!-- Brand Title -->
         <h1 class="text-4xl font-bold text-white">ShadowCircuit</h1>
-        
+
         <!-- Desktop Navbar -->
         <ul class="hidden md:flex space-x-4">
             <li><a href="index.html" class="text-white hover:text-yellow-300 transition duration-300 ease-in-out">Home</a></li>
@@ -21,11 +21,14 @@
             <li><a href="about.html" class="text-white hover:text-yellow-300 transition duration-300 ease-in-out">About</a></li>
             <li><a href="contact.html" class="text-white hover:text-yellow-300 transition duration-300 ease-in-out">Contact</a></li>
         </ul>
-        
+
         <!-- Mobile Menu Button -->
         <button id="menu-button" class="md:hidden block focus:outline-none">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+            <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
             </svg>
         </button>
     </div>
@@ -33,27 +36,31 @@
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden bg-red-500 text-white text-center md:hidden absolute w-full">
         <a href="index.html" class="block py-2 hover:bg-red-400 transition duration-300 ease-in-out">Home</a>
-        <a href="games.html" class="block py-2 hover:bg-red-400 transition duration-300 ease-in-out">Games</a></li>
+        <a href="games.html" class="block py-2 hover:bg-red-400 transition duration-300 ease-in-out">Games</a>
         <a href="about.html" class="block py-2 hover:bg-red-400 transition duration-300 ease-in-out">About</a>
         <a href="contact.html" class="block py-2 hover:bg-red-400 transition duration-300 ease-in-out">Contact</a>
     </div>
-  </nav>
+</nav>
 
-  <script>
+<script>
     const menuButton = document.getElementById('menu-button');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
     const mobileMenu = document.getElementById('mobile-menu');
 
     menuButton.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
         document.body.classList.toggle('overflow-hidden'); // Prevent scrolling when menu is open
     });
-  </script>
+</script>
 
-    <main class="container mx-auto px-4 py-12">
-        <section class="text-center mb-12">
-            <h2 class="text-4xl font-bold mb-4">Contact Us</h2>
-            <p class="text-gray-400">Have questions or feedback? We'd love to hear from you!</p>
-        </section>
+<main class="container mx-auto px-4 py-12 mt-8">
+    <section class="text-center mb-12">
+        <h2 class="text-4xl font-bold mb-4">Contact Us</h2>
+        <p class="text-gray-400">Have questions or feedback? We'd love to hear from you!</p>
+    </section>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             <!-- Contact Form -->
@@ -72,7 +79,7 @@
                         <label for="message" class="block text-sm font-medium mb-2">Your Message</label>
                         <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Write your message" required></textarea>
                     </div>
-                    <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg">Send Message</button>
+                    <button type="submit" class="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded-lg">Send Message</button>
                 </form>
             </div>
 

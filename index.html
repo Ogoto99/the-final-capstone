@@ -3,57 +3,63 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gaming World</title>
+  <title>ShadowCircuit</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://kit.fontawesome.com/e3f4715c40.js" crossorigin="anonymous"></script>
 </head>
 <body class="bg-gray-900 text-white font-sans">
+<!-- Navbar -->
+<nav class="bg-red-500 fixed top-0 left-0 w-full z-10">
+  <div class="container mx-auto px-4 flex items-center justify-between h-16">
+      <!-- Brand Title -->
+      <h1 class="text-4xl font-bold text-white">ShadowCircuit</h1>
 
-  <!-- Navbar -->
-  <nav class="bg-red-500">
-    <div class="container mx-auto px-4 flex items-center justify-between h-16">
-        <!-- Brand Title -->
-        <h1 class="text-4xl font-bold text-white">ShadowCircuit</h1>
-        
-        <!-- Desktop Navbar -->
-        <ul class="hidden md:flex space-x-4">
-            <li><a href="index.html" class="text-white hover:text-yellow-300 transition duration-300 ease-in-out">Home</a></li>
-            <li><a href="games.html" class="text-white hover:text-yellow-300 transition duration-300 ease-in-out">Games</a></li>
-            <li><a href="about.html" class="text-white hover:text-yellow-300 transition duration-300 ease-in-out">About</a></li>
-            <li><a href="contact.html" class="text-white hover:text-yellow-300 transition duration-300 ease-in-out">Contact</a></li>
-        </ul>
-        
-        <!-- Mobile Menu Button -->
-        <button id="menu-button" class="md:hidden block focus:outline-none">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-            </svg>
-        </button>
-    </div>
+      <!-- Desktop Navbar -->
+      <ul class="hidden md:flex space-x-4">
+          <li><a href="index.html" class="text-white hover:text-yellow-300 transition duration-300 ease-in-out">Home</a></li>
+          <li><a href="games.html" class="text-white hover:text-yellow-300 transition duration-300 ease-in-out">Games</a></li>
+          <li><a href="about.html" class="text-white hover:text-yellow-300 transition duration-300 ease-in-out">About</a></li>
+          <li><a href="contact.html" class="text-white hover:text-yellow-300 transition duration-300 ease-in-out">Contact</a></li>
+      </ul>
 
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden bg-red-500 text-white text-center md:hidden absolute w-full">
-        <a href="index.html" class="block py-2 hover:bg-red-400 transition duration-300 ease-in-out">Home</a>
-        <a href="games.html" class="block py-2 hover:bg-red-400 transition duration-300 ease-in-out">Games</a></li>
-        <a href="about.html" class="block py-2 hover:bg-red-400 transition duration-300 ease-in-out">About</a>
-        <a href="contact.html" class="block py-2 hover:bg-red-400 transition duration-300 ease-in-out">Contact</a>
-    </div>
-  </nav>
+      <!-- Mobile Menu Button -->
+      <button id="menu-button" class="md:hidden block focus:outline-none">
+          <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+          <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+      </button>
+  </div>
 
-  <script>
-    const menuButton = document.getElementById('menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden bg-red-500 text-white text-center md:hidden absolute w-full">
+      <a href="index.html" class="block py-2 hover:bg-red-400 transition duration-300 ease-in-out">Home</a>
+      <a href="games.html" class="block py-2 hover:bg-red-400 transition duration-300 ease-in-out">Games</a>
+      <a href="about.html" class="block py-2 hover:bg-red-400 transition duration-300 ease-in-out">About</a>
+      <a href="contact.html" class="block py-2 hover:bg-red-400 transition duration-300 ease-in-out">Contact</a>
+  </div>
+</nav>
 
-    menuButton.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-        document.body.classList.toggle('overflow-hidden'); // Prevent scrolling when menu is open
-    });
-  </script>
+<script>
+  const menuButton = document.getElementById('menu-button');
+  const menuIcon = document.getElementById('menu-icon');
+  const closeIcon = document.getElementById('close-icon');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      menuIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+      document.body.classList.toggle('overflow-hidden'); // Prevent scrolling when menu is open
+  });
+</script>
 
   <!-- Hero Section -->
   <header class="bg-hero-image bg-cover bg-center h-screen text-center flex items-center justify-center" style="background-image: url('assets/carl-raw-m3hn2Kn5Bns-unsplash.jpg');">
     <div class="bg-black bg-opacity-50 p-6 rounded">
-      <h1 class="text-4xl md:text-6xl font-bold mb-4 text-white">Welcome to Gaming World</h1>
+      <h1 class="text-4xl md:text-6xl font-bold mb-4 text-white">Welcome to ShadowCircuit</h1>
       <p class="text-lg md:text-xl mb-6 text-white">Explore games, connect with players, and level up!</p>
       <a href="#games" class="bg-yellow-500 hover:bg-yellow-600 text-black px-4 py-2 rounded">Explore Games</a>
     </div>
@@ -118,6 +124,14 @@
       <a href="community.html" class="bg-yellow-500 hover:bg-yellow-600 text-black px-4 py-2 rounded">Explore Community</a>
     </div>
   </section>
+  <!-- Review Section -->
+  <section id="review" class="container mx-auto my-12">
+    <h2 class="text-3xl font-bold mb-6 text-center">What people say</h2>
+    <p class="text-center text-gray-400 mb-4">Learn from what people are saying.</p>
+    <div class="flex justify-center">
+      <a href="reviews.html" class="bg-yellow-500 hover:bg-yellow-600 text-black px-4 py-2 rounded">reviews</a>
+    </div>
+  </section>
 
     <!-- Footer -->
     <footer class="bg-red-600 text-black py-8 font-sans">
@@ -168,6 +182,6 @@
                     </div>
                 </div>
             </footer> 
-                       
+          <script type="text/javascript" src="script.js"></script>          
 </body>
 </html>

@@ -9,12 +9,12 @@
 </head>
 
 <body class="bg-gray-900 text-white font-sans">
-    <!-- Navbar -->
-  <nav class="bg-red-500">
+<!-- Navbar -->
+<nav class="bg-red-500 fixed top-0 left-0 w-full z-10">
     <div class="container mx-auto px-4 flex items-center justify-between h-16">
         <!-- Brand Title -->
         <h1 class="text-4xl font-bold text-white">ShadowCircuit</h1>
-        
+
         <!-- Desktop Navbar -->
         <ul class="hidden md:flex space-x-4">
             <li><a href="index.html" class="text-white hover:text-yellow-300 transition duration-300 ease-in-out">Home</a></li>
@@ -22,11 +22,14 @@
             <li><a href="about.html" class="text-white hover:text-yellow-300 transition duration-300 ease-in-out">About</a></li>
             <li><a href="contact.html" class="text-white hover:text-yellow-300 transition duration-300 ease-in-out">Contact</a></li>
         </ul>
-        
+
         <!-- Mobile Menu Button -->
         <button id="menu-button" class="md:hidden block focus:outline-none">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+            <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
             </svg>
         </button>
     </div>
@@ -34,24 +37,29 @@
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden bg-red-500 text-white text-center md:hidden absolute w-full">
         <a href="index.html" class="block py-2 hover:bg-red-400 transition duration-300 ease-in-out">Home</a>
-        <a href="games.html" class="block py-2 hover:bg-red-400 transition duration-300 ease-in-out">Games</a></li>
+        <a href="games.html" class="block py-2 hover:bg-red-400 transition duration-300 ease-in-out">Games</a>
         <a href="about.html" class="block py-2 hover:bg-red-400 transition duration-300 ease-in-out">About</a>
         <a href="contact.html" class="block py-2 hover:bg-red-400 transition duration-300 ease-in-out">Contact</a>
     </div>
-  </nav>
+</nav>
 
-  <script>
+<script>
     const menuButton = document.getElementById('menu-button');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
     const mobileMenu = document.getElementById('mobile-menu');
 
     menuButton.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
         document.body.classList.toggle('overflow-hidden'); // Prevent scrolling when menu is open
     });
-  </script>
+</script>
+
     <!-- About Section -->
     <section class="py-16">
-        <div class="container mx-auto px-6">
+        <div class="container mx-auto px-6 mt-8">
             <h2 class="text-4xl font-bold text-center text-green-500 mb-8">About Us</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
@@ -97,11 +105,11 @@
     <!-- Call to Action Section -->
     <section class="py-16">
         <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold text-green-500 mb-4">Join Our Community</h2>
+            <h2 class="text-3xl font-bold text-white mb-4">Join Our Community</h2>
             <p class="text-gray-300 mb-6">
                 Be part of an amazing gaming community. Stay updated with the latest news and connect with fellow gamers.
             </p>
-            <a href="contact.html" class="bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600">Contact Us</a>
+            <a href="contact.html" class="bg-yellow-500 text-white px-6 py-3 rounded-lg hover:bg-yellow-600">Contact Us</a>
         </div>
     </section>
 

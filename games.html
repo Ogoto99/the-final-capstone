@@ -9,12 +9,12 @@
 </head>
 
 <body class="bg-gray-900 text-white">
-    <!-- Navbar -->
-  <nav class="bg-red-500">
+<!-- Navbar -->
+<nav class="bg-red-500 fixed top-0 left-0 w-full z-10">
     <div class="container mx-auto px-4 flex items-center justify-between h-16">
         <!-- Brand Title -->
         <h1 class="text-4xl font-bold text-white">ShadowCircuit</h1>
-        
+
         <!-- Desktop Navbar -->
         <ul class="hidden md:flex space-x-4">
             <li><a href="index.html" class="text-white hover:text-yellow-300 transition duration-300 ease-in-out">Home</a></li>
@@ -22,11 +22,14 @@
             <li><a href="about.html" class="text-white hover:text-yellow-300 transition duration-300 ease-in-out">About</a></li>
             <li><a href="contact.html" class="text-white hover:text-yellow-300 transition duration-300 ease-in-out">Contact</a></li>
         </ul>
-        
+
         <!-- Mobile Menu Button -->
         <button id="menu-button" class="md:hidden block focus:outline-none">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+            <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
             </svg>
         </button>
     </div>
@@ -34,21 +37,25 @@
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden bg-red-500 text-white text-center md:hidden absolute w-full">
         <a href="index.html" class="block py-2 hover:bg-red-400 transition duration-300 ease-in-out">Home</a>
-        <a href="games.html" class="block py-2 hover:bg-red-400 transition duration-300 ease-in-out">Games</a></li>
+        <a href="games.html" class="block py-2 hover:bg-red-400 transition duration-300 ease-in-out">Games</a>
         <a href="about.html" class="block py-2 hover:bg-red-400 transition duration-300 ease-in-out">About</a>
         <a href="contact.html" class="block py-2 hover:bg-red-400 transition duration-300 ease-in-out">Contact</a>
     </div>
-  </nav>
+</nav>
 
-  <script>
+<script>
     const menuButton = document.getElementById('menu-button');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
     const mobileMenu = document.getElementById('mobile-menu');
 
     menuButton.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
         document.body.classList.toggle('overflow-hidden'); // Prevent scrolling when menu is open
     });
-  </script>
+</script>
 
     <!-- Hero Section -->
     <section class="bg-cover bg-center h-screen" style="background-image: url('assets/carl-raw-m3hn2Kn5Bns-unsplash.jpg');">
@@ -59,105 +66,136 @@
         </div>
     </section>
 
-    <!-- Featured Games -->
-    <section id="games" class="py-16">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-12">Featured Games</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Game Card -->
-                <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
-                    <img src="assets\ad63ba49-52c1-42cc-ac9f-d7ddce73905a.jpg" alt="Game 1" class="w-full">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2">NFS Heat</h3>
-                        <p class="text-white mb-4">
-                            Hustle by day and risk it all at night in Need for Speed™ Heat, a thrilling race experience that pits you against a city's rogue police force as you battle your way into street racing's elite.
-                        </p>
-                        <a href="#" class="text-yellow-400 hover:underline">Learn More</a>
-                    </div>
+<!-- Featured Games -->
+<section id="games" class="py-16">
+    <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-12">Top picks</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Game Card 1 -->
+            <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden group relative">
+                <img src="assets/ad63ba49-52c1-42cc-ac9f-d7ddce73905a.jpg" alt="Game 1" class="w-full">
+                <div class="p-6 absolute inset-0 bg-gray-900 bg-opacity-90 text-white flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <h3 class="text-2xl font-bold mb-2">NFS Heat</h3>
+                    <p class="text-white mb-4 text-center">
+                        Hustle by day and risk it all at night in Need for Speed™ Heat, a thrilling race experience that pits you against a city's rogue police force as you battle your way into street racing's elite.
+                    </p>
+                    <a href="https://www.ea.com/games/need-for-speed/need-for-speed-heat" target="_blank" class="text-yellow-400 hover:underline">Learn More</a>
                 </div>
-                <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
-                    <img src="assets\Call of Duty_ Modern Warfare II - Xbox One_ Xbox Series X.jpg" alt="Game 2" class="w-full">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2">Call of Duty Modern Warfare II</h3>
-                        <p class="text-white mb-4">
-                            Call of Duty: Modern Warfare II drops players into an unprecedented global conflict that features the return of the iconic operators of Task Force 141. Infinity Ward brings fans state-of-the-art gameplay, with all-new gun handling, an advanced AI system, a new Gunsmith and a suite of other gameplay and graphical innovations that elevate the franchise to new heights.
-                        </p>
-                        <a href="#" class="text-yellow-400 hover:underline">Learn More</a>
-                    </div>
+            </div>
+            <!-- Game Card 2 -->
+            <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden group relative">
+                <img src="assets/Call of Duty_ Modern Warfare II - Xbox One_ Xbox Series X.jpg" alt="Game 2" class="w-full">
+                <div class="p-6 absolute inset-0 bg-gray-900 bg-opacity-90 text-white flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <h3 class="text-2xl font-bold mb-2">Call of Duty Modern Warfare II</h3>
+                    <p class="text-white mb-4 text-center">
+                        Call of Duty: Modern Warfare II drops players into an unprecedented global conflict that features the return of the iconic operators of Task Force 141.
+                    </p>
+                    <a href="https://www.callofduty.com/modernwarfare2" target="_blank" class="text-yellow-400 hover:underline">Learn More</a>
                 </div>
-                <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
-                    <img src="assets\Far cry 3 Ps4 And love - How they Are the Same _.jpg" alt="Game 3" class="w-full">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2">Far cry 3</h3>
-                        <p class="text-white mb-4">
-                            Far Cry® 3 Classic Edition brings the Rook Islands to current-gen consoles for the first time. Discover the island's bloody secrets and take the fight to the enemy; improvise and use your environment to your advantage; and outwit its roster of ruthless, deranged inhabitants to save your friends.
-                        </p>
-                        <a href="#" class="text-yellow-400 hover:underline">Learn More</a>
-                    </div>
+            </div>
+            <!-- Game Card 3 -->
+            <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden group relative">
+                <img src="assets/Far cry 3 Ps4 And love - How they Are the Same _.jpg" alt="Game 3" class="w-full">
+                <div class="p-6 absolute inset-0 bg-gray-900 bg-opacity-90 text-white flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <h3 class="text-2xl font-bold mb-2">Far Cry 3</h3>
+                    <p class="text-white mb-4 text-center">
+                        Far Cry® 3 Classic Edition brings the Rook Islands to current-gen consoles for the first time.
+                    </p>
+                    <a href="https://www.ubisoft.com/en-us/game/far-cry-3" target="_blank" class="text-yellow-400 hover:underline">Learn More</a>
                 </div>
-                <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
-                    <img src="assets\Grand Theft Auto V GTA Premium Edition Rockstar Games PS4 Físico.jpg" alt="Game 3" class="w-full">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2">Grand Theft Auto V</h3>
-                        <p class="text-white mb-4">
-                            Grand Theft Auto V is an action-adventure game played from either a third-person or first-person perspective. Players complete missions—linear scenarios with set objectives—to progress through the story. Outside of the missions, players may freely roam the open world.
-                        </p>
-                        <a href="#" class="text-yellow-400 hover:underline">Learn More</a>
-                    </div>
+            </div>
+            <!-- Game Card 4 -->
+            <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden group relative">
+                <img src="assets/Grand Theft Auto V GTA Premium Edition Rockstar Games PS4 Físico.jpg" alt="Game 4" class="w-full">
+                <div class="p-6 absolute inset-0 bg-gray-900 bg-opacity-90 text-white flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <h3 class="text-2xl font-bold mb-2">Grand Theft Auto V</h3>
+                    <p class="text-white mb-4 text-center">
+                        Grand Theft Auto V is an action-adventure game played from either a third-person or first-person perspective.
+                    </p>
+                    <a href="https://www.rockstargames.com/V/" target="_blank" class="text-yellow-400 hover:underline">Learn More</a>
                 </div>
-                <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
-                    <img src="assets\ps5-games-ghost-of-tsushima-image-block-02-en-14oct21.webp" alt="Game 3" class="w-full">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2">Ghost of Tsushima</h3>
-                        <p class="text-white mb-4">
-                            Ghost of Tsushima is a 2020 action-adventure game developed by Sucker Punch Productions and published by Sony Interactive Entertainment. The player controls Jin Sakai, a samurai on a quest to protect Tsushima Island during the first Mongol invasion of Japan.
-                        </p>
-                        <a href="#" class="text-yellow-400 hover:underline">Learn More</a>
-                    </div>
+            </div>
+            <!-- Game Card 5 -->
+            <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden group relative">
+                <img src="assets/ps5-games-ghost-of-tsushima-image-block-02-en-14oct21.webp" alt="Game 5" class="w-full">
+                <div class="p-6 absolute inset-0 bg-gray-900 bg-opacity-90 text-white flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <h3 class="text-2xl font-bold mb-2">Ghost of Tsushima</h3>
+                    <p class="text-white mb-4 text-center">
+                        Ghost of Tsushima is a 2020 action-adventure game developed by Sucker Punch Productions.
+                    </p>
+                    <a href="https://www.playstation.com/en-us/games/ghost-of-tsushima/" target="_blank" class="text-yellow-400 hover:underline">Learn More</a>
                 </div>
-                <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
-                    <img src="assets\ps5-games-gt7-hub-image-block-01-en-10mar22.webp" alt="Game 3" class="w-full">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2">Gran Turismo 7</h3>
-                        <p class="text-white mb-4">
-                            Gran Turismo 7 brings together the very best features of the Real Driving Simulator. Whether you're a competitive or casual racer, collector, tuner, livery designer or photographer – find your line with a staggering collection of game modes including fan-favorites like GT Campaign, Arcade and Driving School.
-                        </p>
-                        <a href="#" class="text-yellow-400 hover:underline">Learn More</a>
-                    </div>
+            </div>
+            <!-- Game Card 6 -->
+            <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden group relative">
+                <img src="assets/ps5-games-gt7-hub-image-block-01-en-10mar22.webp" alt="Game 6" class="w-full">
+                <div class="p-6 absolute inset-0 bg-gray-900 bg-opacity-90 text-white flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <h3 class="text-2xl font-bold mb-2">Gran Turismo 7</h3>
+                    <p class="text-white mb-4 text-center">
+                        Gran Turismo 7 brings together the very best features of the Real Driving Simulator.
+                    </p>
+                    <a href="https://www.playstation.com/en-us/games/gran-turismo-7/" target="_blank" class="text-yellow-400 hover:underline">Learn More</a>
                 </div>
-                <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
-                    <img src="assets\ps5-games-horizon-forbidden-west-image-block-01-en-28jul21.webp" alt="Game 3" class="w-full">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2">Horizon Forbidden-West</h3>
-                        <p class="text-white mb-4">
-                            Horizon Forbidden West, Aloy ventures into the dangerous, uncharted Forbidden West to uncover the secrets behind Earth's imminent collapse and restore balance to a world ravaged by a mysterious blight and catastrophic storms.
-                        </p>
-                        <a href="#" class="text-yellow-400 hover:underline">Learn More</a>
-                    </div>
+            </div>
+            <!-- Game Card 7 -->
+            <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden group relative">
+                <img src="assets/ps5-games-horizon-forbidden-west-image-block-01-en-28jul21.webp" alt="Game 7" class="w-full">
+                <div class="p-6 absolute inset-0 bg-gray-900 bg-opacity-90 text-white flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <h3 class="text-2xl font-bold mb-2">Horizon Forbidden West</h3>
+                    <p class="text-white mb-4 text-center">
+                        Horizon Forbidden West, Aloy ventures into the dangerous, uncharted Forbidden West.
+                    </p>
+                    <a href="https://www.playstation.com/en-us/games/horizon-forbidden-west/" target="_blank" class="text-yellow-400 hover:underline">Learn More</a>
                 </div>
-                <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
-                    <img src="assets\1308c597-0114-4335-9515-a9bca1856cb8.jpg" alt="Game 3" class="w-full">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2">Fifa 23</h3>
-                        <p class="text-white mb-4">
-                            FIFA 23 Legacy Edition features the latest kits, clubs, and squads from some of the top football leagues of the world. It will also feature the addition of top women's club teams and some of the world's most famous stadiums, including brand new ones, an updated visual identity and a refreshed broadcast overlay package.
-                        </p>
-                        <a href="#" class="text-yellow-400 hover:underline">Learn More</a>
-                    </div>
+            </div>
+            <!-- Game Card 8 -->
+            <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden group relative">
+                <img src="assets/1308c597-0114-4335-9515-a9bca1856cb8.jpg" alt="Game 8" class="w-full">
+                <div class="p-6 absolute inset-0 bg-gray-900 bg-opacity-90 text-white flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <h3 class="text-2xl font-bold mb-2">FIFA 23</h3>
+                    <p class="text-white mb-4 text-center">
+                        FIFA 23 Legacy Edition features the latest kits, clubs, and squads from top football leagues.
+                    </p>
+                    <a href="https://www.ea.com/games/fifa/fifa-23" target="_blank" class="text-yellow-400 hover:underline">Learn More</a>
                 </div>
-                <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
-                    <img src="assets\wp6068822-tom-clancys-ghost-recon-breakpoint-hd-wallpapers.jpg" alt="Game 3" class="w-full">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2">Tom Clancy's Breakpoint</h3>
-                        <p class="text-white mb-4">
-                            Breakpoint is set in an open world named Auroa which can be freely explored by players. Like its predecessor Wildlands, Breakpoint is a tactical shooter game set in an open world environment. It is played from a third-person perspective and uses an optional first-person view for aiming weapons. 
-                        </p>
-                        <a href="#" class="text-yellow-400 hover:underline">Learn More</a>
-                    </div>
+            </div>
+            <!-- Game Card 9 -->
+            <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden group relative">
+                <img src="assets/wp6068822-tom-clancys-ghost-recon-breakpoint-hd-wallpapers.jpg" alt="Game 9" class="w-full">
+                <div class="p-6 absolute inset-0 bg-gray-900 bg-opacity-90 text-white flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <h3 class="text-2xl font-bold mb-2">Tom Clancy's Breakpoint</h3>
+                    <p class="text-white mb-4 text-center">
+                        Breakpoint is set in an open world named Auroa, freely explored by players.
+                    </p>
+                    <a href="https://www.ubisoft.com/en-us/game/ghost-recon-breakpoint" target="_blank" class="text-yellow-400 hover:underline">Learn More</a>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+<!-- Add this CSS for small screens -->
+<style>
+    @media (max-width: 768px) {
+      .group:hover .group-hover\:opacity-100 {
+        opacity: 1;
+      }
+      .group .group-hover\:opacity-100 {
+        transition: opacity 0.3s ease-in-out;
+      }
+    }
+    </style>
+    
+    <!-- Add this JavaScript for touch devices -->
+    <script>
+    document.querySelectorAll('.group').forEach((card) => {
+      card.addEventListener('click', () => {
+        const details = card.querySelector('.group-hover\\:opacity-100');
+        if (details) {
+          details.style.opacity = details.style.opacity === '1' ? '0' : '1';
+        }
+      });
+    });
+    </script>
 
        <!-- Footer -->
        <footer class="bg-red-600 text-black py-8 font-sans">
